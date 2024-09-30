@@ -5,11 +5,11 @@ The Image Slider is a visually engaging web component designed to showcase a col
 
 Key features include:
 
-## Automatic Slideshow: Images transition automatically, allowing users to view the gallery effortlessly.
-## Manual Navigation: Users can navigate through the images using "Next" and "Previous" buttons, giving them control over their viewing experience.
-## Thumbnail Previews: A thumbnail section allows users to quickly see and select different images, enhancing usability and accessibility.
-## Responsive Design: The slider adapts seamlessly to various screen sizes, ensuring an optimal viewing experience on desktops, tablets, and mobile devices.
-## This image slider is built using HTML, CSS, and JavaScript, making it lightweight and easy to integrate into any web project.
+- Automatic Slideshow: Images transition automatically, allowing users to view the gallery effortlessly.
+- Manual Navigation: Users can navigate through the images using "Next" and "Previous" buttons, giving them control over their viewing experience.
+- Thumbnail Previews: A thumbnail section allows users to quickly see and select different images, enhancing usability and accessibility.
+- Responsive Design: The slider adapts seamlessly to various screen sizes, ensuring an optimal viewing experience on desktops, tablets, and mobile devices.
+- This image slider is built using HTML, CSS, and JavaScript, making it lightweight and easy to integrate into any web project.
 
 ## Demo
 
@@ -27,4 +27,4 @@ Include a link to a live demo or screenshots of your project.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Abhishek200-1/Image_Slider.git
+   git clone https://github.com/Abhishek200-1/Image_Slider
