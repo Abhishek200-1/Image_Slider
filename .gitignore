@@ -1,0 +1,24 @@
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Compiled CSS maps (if any preprocessors are used, like SASS/SCSS)
+*.css.map
+
+# Cache files
+.cache/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Ignore any temporary image files (like backups)
+*.tmp
+*.bak
+
+# Ignore build folders (if applicable)
+dist/
+build/
