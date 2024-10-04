@@ -1,55 +1,46 @@
-let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+const items = document.querySelectorAll('.slider .list .item');
+const thumbnails = document.querySelectorAll('.slider .thumbnail .item img');
+let currentIndex = 0;
+let interval = 3000; // Change image every 3 seconds
 
-menu.onclick = () => {
-    menu.classList.toggle('bx-x');
-    navbar.classList.toggle('open');
+// Function to show current image
+function showSlide(index) {
+    items.forEach((item, i) => {
+        item.style.display = i === index ? 'block' : 'none';
+    });
 }
 
-// slider part
-
-let nextBtn = document.querySelector('.next')
-let prevBtn = document.querySelector('.prev')
-
-let slider = document.querySelector('.slider')
-let sliderList = slider.querySelector('.slider .list')
-let thumbnail = document.querySelector('.slider .thumbnail')
-let thumbnailItems = thumbnail.querySelectorAll('.item')
-
-thumbnail.appendChild(thumbnailItems[0])
-
-// Function for next button 
-nextBtn.onclick = function() {
-    moveSlider('next')
+// Function to set active thumbnail
+function setActiveThumbnail(index) {
+    thumbnails.forEach((thumbnail, i) => {
+        thumbnail.classList.toggle('active', i === index);
+    });
 }
 
-
-// Function for prev button 
-prevBtn.onclick = function() {
-    moveSlider('prev')
-}
-
-
-function moveSlider(direction) {
-    let sliderItems = sliderList.querySelectorAll('.item')
-    let thumbnailItems = document.querySelectorAll('.thumbnail .item')
-    
-    if(direction === 'next'){
-        sliderList.appendChild(sliderItems[0])
-        thumbnail.appendChild(thumbnailItems[0])
-        slider.classList.add('next')
-    } else {
-        sliderList.prepend(sliderItems[sliderItems.length - 1])
-        thumbnail.prepend(thumbnailItems[thumbnailItems.length - 1])
-        slider.classList.add('prev')
+// Automatically move to the next slide every 3 seconds
+function autoSlide() {
+    currentIndex++;
+    if (currentIndex >= items.length) {
+        currentIndex = 0;
     }
-
-
-    slider.addEventListener('animationend', function() {
-        if(direction === 'next'){
-            slider.classList.remove('next')
-        } else {
-            slider.classList.remove('prev')
-        }
-    }, {once: true}) // Remove the event listener after it's triggered once
+    showSlide(currentIndex);
+    setActiveThumbnail(currentIndex);
 }
+
+// Event listeners for navigation arrows
+document.querySelector('.prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    showSlide(currentIndex);
+    setActiveThumbnail(currentIndex);
+});
+
+document.querySelector('.next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    showSlide(currentIndex);
+    setActiveThumbnail(currentIndex);
+});
+
+// Start the automatic sliding
+showSlide(currentIndex);
+setActiveThumbnail(currentIndex);
+setInterval(autoSlide, interval);
