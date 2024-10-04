@@ -11,12 +11,6 @@ Key features include:
 - Responsive Design: The slider adapts seamlessly to various screen sizes, ensuring an optimal viewing experience on desktops, tablets, and mobile devices.
 - This image slider is built using HTML, CSS, and JavaScript, making it lightweight and easy to integrate into any web project.
 
-## Demo
-
-Include a link to a live demo or screenshots of your project.
-
-![Demo Screenshot](path/to/screenshot.png)
-
 ## Technologies Used
 
 - HTML
